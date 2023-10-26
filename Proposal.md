@@ -9,10 +9,9 @@ The theme that this problem belongs to is **Intelligent Browsing**, which is goi
 
 ## Datasets and Algorithms
 Use model on this [github repo](https://github.com/wasiahmad/NeuralCodeSum).
-
+Model trained on [dataset](https://github.com/EdinburghNLP/code-docstring-corpus)
 ## Demonstration
-How will you demonstrate that your approach will work as expected? 
-
+I will try certain code example from the dataset
 ## Programming Language
 Mainly Python (Pytorch)
 
