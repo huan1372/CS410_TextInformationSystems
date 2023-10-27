@@ -10,8 +10,12 @@ The theme that this problem belongs to is **Intelligent Browsing**, which is goi
 ## Datasets and Algorithms
 Use model on this [github repo](https://github.com/wasiahmad/NeuralCodeSum).
 Model trained on [dataset](https://github.com/EdinburghNLP/code-docstring-corpus)
+
 ## Demonstration
-I will try certain code example from the dataset
+Demo the extension by showing how it behaves to some code segmentations from the dataset.
+
+Found limitations of the model through testing.
+
 ## Programming Language
 Mainly Python (Pytorch)
 
