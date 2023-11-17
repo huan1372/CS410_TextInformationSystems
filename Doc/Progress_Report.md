@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/51012369/flask-request-get-json-not-receiving-anything-from-post-request

@@ -8,8 +8,7 @@ The topic **code summarization** is a task that generates descriptions directly 
 The theme that this problem belongs to is **Intelligent Browsing**, which is going to be delivered as a Chrome extension. Code summarization can be viewed as a text generation task with given source code and comments. This problem belongs to text mining, which is taught in the class. In addition, language models learned in class, which compute the probability of each word, are used frequently in this kind of problem.
 
 ## Datasets and Algorithms
-Use model on this [github repo](https://github.com/wasiahmad/NeuralCodeSum).
-Model trained on [dataset](https://github.com/EdinburghNLP/code-docstring-corpus)
+Use model on this [github repo](https://github.com/agemagician/CodeTrans/blob/main/prediction/single%20task/source%20code%20summarization/python/t5%20interface/base_model.ipynb).
 
 ## Demonstration
 Demo the extension by showing how it behaves to some code segmentations from the dataset.
