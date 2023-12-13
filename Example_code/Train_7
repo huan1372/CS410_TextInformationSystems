@@ -1,0 +1,9 @@
+Create a Python function that takes in a string and a list of words and returns true if the string contains all the words in the list.
+===========================================
+def contains_words(input_string, words):
+ for word in words:
+ if word not in input_string:
+ return False
+ return True
+
+print(contains_words('This is a test', ['test', 'this', 'is'])) # True

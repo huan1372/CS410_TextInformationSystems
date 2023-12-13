@@ -1,0 +1,14 @@
+Generate a python script to perform this action.
+===========================================
+def remove_duplicates(string): 
+    result = "" 
+    prev = '' 
+
+    for char in string:
+        if char != prev: 
+            result += char
+            prev = char
+    return result
+
+result = remove_duplicates("AAABBCCCD")
+print(result)

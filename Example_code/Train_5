@@ -1,0 +1,11 @@
+Write a Python code to get the third largest element in a given row.
+===========================================
+def third_largest(lst):
+    if len(lst) < 3:
+        return
+    distinct = []
+    for i in lst:
+        if i not in distinct:
+            distinct.append(i)
+    distinct.sort(reverse=True)
+    return distinct[2]

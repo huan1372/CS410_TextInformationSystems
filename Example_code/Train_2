@@ -1,0 +1,3 @@
+Create a Python list comprehension to get the squared values of a list [1, 2, 3, 5, 8, 13].
+===========================================
+[x*x for x in [1, 2, 3, 5, 8, 13]]

@@ -1,0 +1,11 @@
+Write a python script to generates random numbers between 0 and 9 that are divisible by 3.
+===========================================
+def generate_random_divisible_number():
+    import random
+    while True:
+        # Generate a random number
+        process = random.randint(0, 9)
+        # Check if the number is divisible by 3
+        if process % 3 == 0:
+            # If it is divisible, return it
+            return process

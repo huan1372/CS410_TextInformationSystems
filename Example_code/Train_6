@@ -1,0 +1,42 @@
+Generate a REST API with Python and Flask that allows users to create, read, update, and delete records from a database.
+===========================================
+from flask import Flask, request
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(name)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+db = SQLAlchemy(app)
+
+class Record(db.Model):
+ id = db.Column(db.Integer, primary_key=True)
+ name = db.Column(db.String(120), unique=True)
+
+db.create_all()
+
+@app.route('/records', methods=['GET'])
+def get_records():
+ records = Record.query.all()
+ return {'records':[record.name for record in records]}
+
+@app.route('/records', methods=['POST'])
+def create_record():
+ record = Record(name=request.json['name'])
+ db.session.add(record)
+ db.session.commit()
+ return {'id': record.id}
+
+@app.route('/records/int:id', methods=['PUT'])
+def update_record(id):
+ record = Record.query.get(id)
+ record.name = request.json['name']
+ db.session.commit()
+ return {'message': 'Record updated'}
+
+@app.route('/records/int:id', methods=['DELETE'])
+def delete_record(id):
+ Record.query.filter_by(id=id).delete()
+ db.session.commit()
+ return {'message': 'Record deleted'}
+
+if name == 'main':
+ app.run(debug=True)
