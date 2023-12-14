@@ -60,7 +60,7 @@ This extension uses the **CodeTrans-TF-Base** from [CodeTrans](https://github.co
 This project also provides a Jupyter notebook [Model.ipynb](Model.ipynb) for you to try the model yourself. Make sure you change the environment to the virtual environment **CodeSummarization** you created in the Jupyter notebook!
 
 The model is referred in the backend and return to frontend by flask. The code for using the model in the Chrome Extension can be seen in [Chrome-Extension/app.py](Chrome_Extension/app.py).
-Devlopers can change the model to any model that can be used in python code. Developers only need to make sure the result of summary text is in the following format as line 34-36 so that frontend can parse the results correctly. \
+Devlopers can change the model to any model that can be used in python code. Developers only need to make sure the result of summary text is in the following format as line 34-36 so that frontend can parse the results correctly. For example, one could try to use Chatgpt API to generate the code summarization.\
 <img width="400px" src="./Images/Example_output.png" />
 
 
@@ -78,15 +78,18 @@ This dataset is choosen because it is smaller than BLUE dataset(the dataset used
 
 
 ### Evaluation
-In the **Evaluation** section of [Dataset.ipynb](Dataset.ipynb), we evulate this model with the dataset provided. Using a different dataset to test model also make the result more trustable. 
+In the **Evaluation** section of [Dataset.ipynb](Dataset.ipynb), we evaluate this model with the dataset provided. Using a different dataset to test model also makes the result more trustable. 
 
-The project use rouge score to measure the similarity between the desired output and the model output.
+The project uses the rouge score to measure the similarity between the desired output and the model output. The Recall-Oriented Understudy for Gisting Evaluation (ROUGE) scoring algorithm calculates the similarity between a candidate document and a collection of reference documents. Use the ROUGE score to evaluate the quality of document translation and summarization models.
+
+ROUGE-2 F1-score around 0.1 to 0.2 may be considered low. ROUGE-2 F1-score around 0.2 to 0.4 may be considered moderate.ROUGE-1 F1-score around 0.4 to 0.5 may be considered moderate. ROUGE-1 F1-score above 0.5 is generally considered good. 
 ```
 rouge = Rouge()
 scores = rouge.get_scores(candidate_summary, reference_summary)
 score_list.append(scores[0]['rouge-1']['f'])
 ```
-
-
+Due to limited computing resources, we have run an evaluation for the first 1000 examples and plot the histogram as below.
+As indicated, major prediction is not close to the truth. This does match their prediction of 10% got correct.\
+<img width="400px" src="./Images/Evaluation_plot.png" />
 ## Contribution
 This is a single-person project done by Shan Huang  (sh69@illinois.edu)
