@@ -6,6 +6,8 @@ This tool is a Chrome extension that can be used to generate Python code summari
 [Proposal](./Doc/Proposal.pdf)
 
 [Progress_Report](./Doc/Progress_Report.pdf)
+
+[Presentation](./Doc/Presentation.mp4)
 ## Installation and Usage
 ### Install required packages
 **Python version:** Python 3.10
