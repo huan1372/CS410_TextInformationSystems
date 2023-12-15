@@ -82,14 +82,18 @@ In the **Evaluation** section of [Dataset.ipynb](Dataset.ipynb), we evaluate thi
 
 The project uses the rouge score to measure the similarity between the desired output and the model output. The Recall-Oriented Understudy for Gisting Evaluation (ROUGE) scoring algorithm calculates the similarity between a candidate document and a collection of reference documents. Use the ROUGE score to evaluate the quality of document translation and summarization models.
 
-ROUGE-2 F1-score around 0.1 to 0.2 may be considered low. ROUGE-2 F1-score around 0.2 to 0.4 may be considered moderate.ROUGE-1 F1-score around 0.4 to 0.5 may be considered moderate. ROUGE-1 F1-score above 0.5 is generally considered good. 
+ROUGE-1 F1-score around 0.4 to 0.5 may be considered moderate. 
+ROUGE-1 F1-score above 0.5 is generally considered good. 
+
+ROUGE-2 F1-score around 0.1 to 0.2 may be considered low. ROUGE-2 F1-score around 0.2 to 0.4 may be considered moderate.
 ```
 rouge = Rouge()
 scores = rouge.get_scores(candidate_summary, reference_summary)
 score_list.append(scores[0]['rouge-1']['f'])
 ```
 Due to limited computing resources, we have run an evaluation for the first 1000 examples and plot the histogram as below.
-As indicated, major prediction is not close to the truth. This does match their prediction of 10% get correct.\
-<img width="400px" src="./Images/Evaluation_plot.png" />
+As indicated by the ROUGE-1 F1-score (most below 0.4) and ROUGE-2 F1-score (most below 0.2), the major prediction is not close to the truth. This matches their results of 10% correctness. You could evaluate more by changing the **GENERATE_NUM** in the Evaluation.\
+<img width="400px" src="./Images/Rouge1_F1_Score.png" />
+<img width="400px" src="./Images/Rouge2_F1_Score.png" />
 ## Contribution
 This is a single-person project done by Shan Huang  (sh69@illinois.edu)
