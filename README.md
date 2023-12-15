@@ -89,7 +89,7 @@ scores = rouge.get_scores(candidate_summary, reference_summary)
 score_list.append(scores[0]['rouge-1']['f'])
 ```
 Due to limited computing resources, we have run an evaluation for the first 1000 examples and plot the histogram as below.
-As indicated, major prediction is not close to the truth. This does match their prediction of 10% got correct.\
+As indicated, major prediction is not close to the truth. This does match their prediction of 10% get correct.\
 <img width="400px" src="./Images/Evaluation_plot.png" />
 ## Contribution
 This is a single-person project done by Shan Huang  (sh69@illinois.edu)
